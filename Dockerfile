@@ -1,4 +1,4 @@
-# Use official Python 3.9 base image
+# Use official Python 3.9 base image 
 FROM python:3.9
 
 # Set working directory inside container
@@ -24,5 +24,5 @@ EXPOSE 8000
 # Collect static files
 RUN python3 manage.py collectstatic --noinput
 
-# Run migrations and then start server (here using Django’s dev server)
-CMD ["bash", "-c", "python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"]
+# 👉 Final command to run Django
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
